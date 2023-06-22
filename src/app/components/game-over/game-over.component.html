@@ -1,0 +1,9 @@
+<div class="gameOverContainer" id="gameOverContainer">
+  <img [src]="gameOverGif" id="gif" alt="gif to the end" class="background-image">
+  <div class="finalScore_text">You scored:</div>
+  <div class="finalScore" id="finalScore">{{ score }}</div>
+  <div class="gameOverButtons" id="gameOverButtons">
+      <button class="backToMenuBtn" id="backToMenuBtn" routerLink="/">BACK TO MENU</button>
+      <button class="playAgainBtn" id="playAgainBtn" routerLink="/game">PLAY AGAIN</button>
+  </div>
+</div>

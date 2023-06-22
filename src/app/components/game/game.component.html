@@ -1,0 +1,28 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="game-container">
+  <h1 class="game-title">GUESS WHERE</h1>
+  <div class="img_container">
+    <img [src]="currentImage" alt="Image of the place" class="background-image">
+  </div>
+  <div class="buttons">
+    <div class="btnL" id="btnL" (click)="checkAnswerL()"></div>
+    <div class="btnR" id="btnR" (click)="checkAnswerR()"></div>
+  </div>
+  <div class="chronometer">
+    <div class="circle" [ngStyle]="circleStyle">
+        <div id="time" class="time">{{progressValue}}</div>
+    </div>
+  </div>
+  <div class="options">
+    <div class="option1"><h2 id="option1">{{ option1 }}</h2></div>
+    <div class="option2"><h2 id="option2">{{ option2 }}</h2></div>
+  </div>
+  <div class="footer">
+    <h3 class="score high-score">High score: {{ highScore }}</h3>
+    <h3 class="score current-score">Score: {{ score }}</h3>
+  </div>
+</div>
+</body>

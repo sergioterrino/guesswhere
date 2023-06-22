@@ -1,0 +1,117 @@
+.gameOverContainer{
+  margin: auto;
+  /* display: block; */
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameOverContainer img{
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.finalScore_text{
+  margin: auto;
+  font-size: 2.7vw;
+  font-family: sans-serif Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  width: 18%;
+  height: 6%;
+  background-position: center;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  top: 12%;
+  right: 0;
+  left: 0;
+}
+
+.finalScore{
+  margin: auto;
+  font-size: 12vw;
+  font-family: sans-serif Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  width: 18%;
+  height: 14%;
+  background-position: center;
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  line-height: 90%;
+  top: 19.2%;
+  right: 0;
+  left: 0;
+}
+
+.gameOverButtons{
+  display: flex;
+}
+
+@font-face {
+  font-family: bernier;
+  src: url(../../../assets/font-Bernier/bernier.ttf);
+}
+
+.backToMenuBtn{
+  margin: auto;
+  background-color: darkorchid;
+  padding: 1% 0% 1% 0%;
+  width: 19vw;
+  height: 9vh;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.5vw;
+  font-family: bernier;
+  line-height: 100%;
+  color: whitesmoke;
+  letter-spacing: 0.01em;
+  border: 0em solid white;
+  border-radius: 0.9em;
+  background-color: rgb(93, 192, 94);
+  position: absolute;
+  top: 55%;
+  right: 20%;
+  left: 0;
+
+}
+
+.playAgainBtn{
+  margin: auto;
+  background-color: darkorchid;
+  padding: 1% 0% 1% 0%;
+  width: 19vw;
+  height: 9vh;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.5vw;
+  font-family: bernier;
+  line-height: 100%;
+  color: whitesmoke;
+  letter-spacing: 0.01em;
+  border: 0em solid white;
+  border-radius: 0.9em;
+  background-color: rgb(93, 192, 94);
+  position: absolute;
+  top: 55%;
+  right: 0;
+  left: 20%;
+}
+
+#gameOverContainer button:active{
+  width: 18.5vw;
+  height: 8.5vh;
+}
+
+#gameOverContainer button:hover{
+  filter: brightness(80%);
+}
