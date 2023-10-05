@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
-  styleUrls: ['./game.component.css']
+  styleUrls: ['./game.component.css'],
 })
 export class GameComponent {
 
@@ -85,7 +85,7 @@ export class GameComponent {
     this.progressValue = 10;
     this.progressEndValue = 0;
     let circulo = 0;
-    const speed = 1000;
+    const speed = 1300;
 
     this.interval = setInterval(() => {
       this.progressValue--;
@@ -131,6 +131,7 @@ export class GameComponent {
   gameOver() {
     this.router.navigate(['/game-over'], { queryParams: { score: this.score } });
     localStorage.setItem('highScore', this.highScore.toString());
+    this.stopTimer();
   }
 
 
