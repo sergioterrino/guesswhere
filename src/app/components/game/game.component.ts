@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 export class GameComponent {
 
   places: Place[];
+  queue: string[] = []; //I save the used places for not repeat
   currentImage: string = '';
   nameCurrentImage: string = '';
   theOtherName: string = '';
@@ -48,19 +49,28 @@ export class GameComponent {
     const randomCountry = this.getRandomPlace();
     this.currentImage = randomCountry.imageUrl;
     this.nameCurrentImage = randomCountry.name;
+    this.queue.push(this.nameCurrentImage); //I save in the queue the name of Place that we're looking
   }
 
   //elije al azar una img del array countries y la devuelve
   getRandomPlace(): Place {
-    const randomIndex = Math.floor(Math.random() * this.places.length);
-    return this.places[randomIndex];
+    let randomIndex = 0;
+    let selectPlace = null;
+    do{
+      randomIndex = Math.floor(Math.random() * this.places.length);
+      selectPlace = this.places[randomIndex];
+    }while(this.queue.includes(selectPlace.name));
+    //si la cola esta llena a 50 de length por ejemplo, vacíamos el primer hueco
+    if(this.queue.length >= 50){
+      this.queue.shift();
+    }
+    return selectPlace;
   }
 
   setOptions(){
     //firstly I want to set the place for the name of the photo, random
     //I set or 1 or 2. And this will be the position of the name of the currentImage
     const randomPosition = Math.floor(Math.random() * 2) + 1;
-    console.log(randomPosition);
 
     //Now I must choose the second name, random, but it must different to first name
     this.theOtherName = this.getRandomPlace().name;
@@ -85,7 +95,7 @@ export class GameComponent {
     this.progressValue = 10;
     this.progressEndValue = 0;
     let circulo = 0;
-    const speed = 1300;
+    const speed = 1500;
 
     this.interval = setInterval(() => {
       this.progressValue--;
